@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import TextAtom from "../atom/text";
 import Slider from "../Molecules/slider";
-import { ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider ,styled} from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import Box from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
 import theme from "../theme/theme";
 import Button from "@mui/material/Button";
 

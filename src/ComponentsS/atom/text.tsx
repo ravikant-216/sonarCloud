@@ -37,7 +37,7 @@ function TextAtom({
 }: TextAtomProps) {
   let formattedValue = value;
   if (typeof value === "string") {
-    const regex = /(\d+\.\d+)/;
+    const regex = /(\d++\.\d++)/;
     const numberMatch = regex.exec(value);
 
     if (numberMatch) {
