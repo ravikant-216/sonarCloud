@@ -1,0 +1,27 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh;
+}
+#vv button{
+  background-color:#6C5DD3;
+  opacity: 0.7;
+  cursor: pointer;
+}
+#vv button:hover{
+  opacity: 1;
+}
+
+.popup-open {
+  background-color: #100F1C;
+}
+.hidden {
+  display: none;
+}
+.appButton{
+  padding: 15px 40px;
+  border: none;
+  border-radius: 20px;
+}
