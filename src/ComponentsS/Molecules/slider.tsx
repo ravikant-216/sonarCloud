@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Mytheme from "../theme/theme";
-import { ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider, styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { styled } from "@mui/material/styles";
 import { Slider } from "@mui/material";
 import Button from "@mui/material/Button/Button";
 
@@ -17,43 +16,41 @@ const MainBox = styled(Box)`
   justify-content: space-between;
   align-items: center;
 `;
-const TextSlide=styled(Typography)
-`
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 140%;
-color: #A5A5A6;
+const TextSlide = styled(Typography)`
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: #a5a5a6;
 `;
-const ResetButton =styled(Button)`
-background: #2d2d30;
-border-radius: 12px;
-border: none;
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 19px;
-display: flex;
-align-items: center;
-text-align: center;
-color: #C9C8CC;
-  &:hover, &.Mui-focusVisible {
+const ResetButton = styled(Button)`
+  background: #2d2d30;
+  border-radius: 12px;
+  border: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #c9c8cc;
+  &:hover,
+  &.Mui-focusVisible {
     background: #2d2d30;
   }
 `;
 
-const SliderRange=styled(Slider)
-`
-::-webkit-Slider-thumb{
-  -webkit-appearance:none; 
-  width:23px;
-  height:23px;
-  border-radius:25%;
-  background-color:#B4A9FF;
-  cursor:pointer;
-}
-
-`
+const SliderRange = styled(Slider)`
+  ::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 23px;
+    height: 23px;
+    border-radius: 25%;
+    background-color: #b4a9ff;
+    cursor: pointer;
+  }
+`;
 
 const Sliders: React.FC<SliderProps> = ({ initialValue, onChange }) => {
   const [value, setValue] = useState(initialValue);
@@ -75,9 +72,7 @@ const Sliders: React.FC<SliderProps> = ({ initialValue, onChange }) => {
           <TextSlide variant="body1" sx={{ color: "#A5A5A6" }}>
             Slide to autoselect
           </TextSlide>
-          <ResetButton onClick={handleResetClick}>
-            Reset
-          </ResetButton>
+          <ResetButton onClick={handleResetClick}>Reset</ResetButton>
         </MainBox>
         <SliderRange
           min={0.0}
@@ -88,17 +83,17 @@ const Sliders: React.FC<SliderProps> = ({ initialValue, onChange }) => {
           sx={{
             color: "#6C5DD3",
             width: "100%",
-            height:"8px",
+            height: "8px",
             marginBottom: "10px",
             "& .MuiSlider-rail": {
-              backgroundColor: "#3A3A3D"
+              backgroundColor: "#3A3A3D",
             },
             "& .MuiSlider-thumb": {
               width: "23px",
-                height: "23px",
+              height: "23px",
               backgroundColor: "#6C5DD3",
               border: "3px solid #B4A9FF",
-              borderRadius:"5px",
+              borderRadius: "5px",
               "&:hover, &.Mui-focusVisible": {
                 boxShadow: "none",
               },

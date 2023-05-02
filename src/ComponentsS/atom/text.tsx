@@ -1,9 +1,7 @@
 import Typography from "@mui/material/Typography";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { styled } from "@mui/material/styles";
+import { ThemeProvider, createTheme, styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Mytheme from "../theme/theme";
-
 
 export interface TextAtomProps {
   variant: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "body1";
@@ -32,11 +30,15 @@ const TextBox = styled(Box)`
   margin: 8px 0;
 `;
 
-function TextAtom({ variant='h4', textField='Left Text', value='Right Text' }: TextAtomProps) {
-  
+function TextAtom({
+  variant = "h4",
+  textField = "Left Text",
+  value = "Right Text",
+}: TextAtomProps) {
   let formattedValue = value;
   if (typeof value === "string") {
-    const numberMatch = value.match(/(\d+\.\d+)/);
+    const regex = /(\d+\.\d+)/;
+    const numberMatch = regex.exec(value);
 
     if (numberMatch) {
       const numberValue = parseFloat(numberMatch[0]);
